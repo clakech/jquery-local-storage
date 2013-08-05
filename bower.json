@@ -1,0 +1,11 @@
+{
+  "name": "jquery-local-storage",
+  "version": "0.1.0",
+  "main": ["./jquery-local-storage.min.js", "./jquery-local-storage.min.js"],
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.0"
+  }
+}
