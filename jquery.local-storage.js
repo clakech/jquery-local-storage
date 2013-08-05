@@ -5,7 +5,7 @@
  * Copyright 2013 Klaus Hartl
  * Released under the MIT license
  */
-(function (factory) {
+(function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as anonymous module.
     define(['jquery'], factory);
@@ -13,7 +13,7 @@
     // Browser globals.
     factory(jQuery);
   }
-}(function ($) {
+}(function($) {
 
   var pluses = /\+/g;
 
@@ -107,7 +107,6 @@
   // Check for support.
   var hasStorage = !!('object' === typeof window.localStorage &&
       window.localStorage);
-  var tmpStorage = {};
 
   // Check for JSON support, and add if doesn't have it.
   if (typeof JSON !== 'object') {
@@ -170,7 +169,7 @@
           function(a) {
             var c = meta[a];
             return typeof c === 'string' ?
-                c : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+            c : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
           }) + '"' : '"' + string + '"';
     }
 
@@ -402,8 +401,8 @@
         // '{' or '}'. If that is so, then the text is safe for eval.
         if (/^[\],:{}\s]*$/
         .test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
-            .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
-            .replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+        .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+        .replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
           // In the third stage we use the eval function to compile the text
           // into a JavaScript structure. The '{' operator is subject to a
