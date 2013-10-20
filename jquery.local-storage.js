@@ -434,10 +434,11 @@
     // Getter.
     if ('undefined' === typeof value) {
       if (hasStorage) {
-        return $.parseJSON(localStorage[key]);
+        value = localStorage[key];
       } else {
-        return $.parseJSON($.cookie[key]);
+        value = $.cookie[key];
       }
+	  return value ? $.parseJSON(value) : value;
     } else { // Setter.
       if (hasStorage) {
         localStorage[key] = JSON.stringify(value);
